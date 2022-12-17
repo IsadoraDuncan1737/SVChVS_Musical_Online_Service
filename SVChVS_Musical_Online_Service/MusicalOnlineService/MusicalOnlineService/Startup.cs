@@ -1,3 +1,5 @@
+using MusicalOnlineService.Services;
+using MusicalOnlineService.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -22,12 +24,15 @@ namespace MusicalOnlineService
         {
 
             services.AddControllersWithViews();
+            services.AddDbContext<MusicalOnlineServiceContext>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.RegistrateServiceDependencies();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
