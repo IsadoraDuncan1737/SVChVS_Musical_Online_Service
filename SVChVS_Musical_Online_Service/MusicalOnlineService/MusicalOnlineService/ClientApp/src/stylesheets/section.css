@@ -1,0 +1,13 @@
+.col {
+    max-width: 302px;
+    padding: 0;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.row {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
