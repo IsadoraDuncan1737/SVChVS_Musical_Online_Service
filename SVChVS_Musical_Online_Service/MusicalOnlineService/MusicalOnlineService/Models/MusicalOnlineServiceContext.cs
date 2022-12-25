@@ -58,8 +58,6 @@ namespace MusicalOnlineService.Models
                     .IsRequired()
                     .HasMaxLength(200);
 
-                entity.Property(e => e.ReleaseDate).HasColumnType("date");
-
                 entity.HasOne(d => d.Performer)
                     .WithMany(p => p.Albums)
                     .HasForeignKey(d => d.PerformerId)
@@ -74,10 +72,6 @@ namespace MusicalOnlineService.Models
                 entity.Property(e => e.Id)
                     .HasMaxLength(200)
                     .HasColumnName("ID");
-
-                entity.Property(e => e.CareerEndDate).HasColumnType("date");
-
-                entity.Property(e => e.CareerStartDate).HasColumnType("date");
 
                 entity.Property(e => e.Genres)
                     .IsRequired()
@@ -103,8 +97,6 @@ namespace MusicalOnlineService.Models
                 entity.Property(e => e.Genres)
                     .IsRequired()
                     .HasMaxLength(200);
-
-                entity.Property(e => e.ReleaseDate).HasColumnType("date");
 
                 entity.Property(e => e.PerformerId)
                     .IsRequired()

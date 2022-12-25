@@ -15,8 +15,6 @@ namespace MusicalOnlineService.Models
 
         public string Id { get; set; }
         public string Name { get; set; }
-        public DateTime CareerStartDate { get; set; }
-        public DateTime? CareerEndDate { get; set; }
         public string Genres { get; set; }
 
         public virtual ICollection<Album> Albums { get; set; }
