@@ -8,14 +8,20 @@ export class TracksPage extends Component {
         super(props);
 
         this.state = {
-            tracks: [],
+            tracks: this.props.tracks,
+            loaded: false
         }
 
         this.getTracks = this.getTracks.bind(this);
+        this.getTrack = this.getTrack.bind(this);
     }
 
     componentDidMount() {
-        this.getTracks();
+        this.props.tracks.length === 0
+            ? this.props.trackTitle == ""
+                ? this.getTracks()
+                : this.getTrack()
+            : this.setState({ loaded: true });
     }
 
     render() {
@@ -33,5 +39,15 @@ export class TracksPage extends Component {
         const data = await response.json();
 
         this.setState({ tracks: data, loaded: true });
+    }
+
+    async getTrack() {
+        const response = await fetch(`track/get-track-by-title?title=${this.props.trackTitle}`);
+
+        const data = await response.json();
+
+        const arrayData = [data];
+
+        this.setState({ tracks: arrayData, loaded: true });
     }
 }
