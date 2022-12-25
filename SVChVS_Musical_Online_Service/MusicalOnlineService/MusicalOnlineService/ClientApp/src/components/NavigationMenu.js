@@ -11,11 +11,14 @@ export class NavigationMenu extends Component {
     render() {
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Navbar.Brand href="/">Проект</Navbar.Brand>
+                <Navbar.Brand href="/">Музыкальный Онлайн Сервис</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav>
-                        <Nav.Link href="/">На главную</Nav.Link>
+                        <Nav.Link href="/Performers">Исполнители</Nav.Link>
+                        <Nav.Link href="/Albums">Альбомы</Nav.Link>
+                        <Nav.Link href="/Tracks">Треки</Nav.Link>
+                        <Nav.Link href="/Add">Добавить</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
