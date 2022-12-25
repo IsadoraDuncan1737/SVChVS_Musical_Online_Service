@@ -13,23 +13,23 @@ export class TrackCardView extends Component {
 
     render() {
         return (
-            <Card>
-                <Card.Img src="/Performers/default/default/default.jpg" />
-                <Card.Header>
-                    <a className="track-title" href="">{this.props.track.title}</a>
+            <Card bg="dark" text="white">
+                <Card.Img src={`/Performers/${this.props.performerName}/${this.props.albumTitle}/${this.props.albumTitle}.jpg`} />
+                <Card.Header as = "h3">
+                    <a className="performer-name" href={`/Performers/${this.props.performerName}`}>{this.props.performerName}</a>
                 </Card.Header>
                 <Card.Body>
                     <Card.Title>
-                        <a className="performer-name" href="">{this.props.performerName}</a>
+                        <p>{this.props.track.title}</p>
                     </Card.Title>
                     <Card.Subtitle>
-                        <a className="album-title" href=""> {this.props.albumTitle} </a>
+                        <a className="album-title" href={`/Albums/${this.props.albumTitle}`}> ({this.props.albumTitle}) </a>
                     </Card.Subtitle>
-                    <ReactAudioPlayer src={"/Performers/default/default/default.mp3"} controls />
+                    <ReactAudioPlayer src={`/Performers/${this.props.performerName}/${this.props.albumTitle}/${this.props.track.title}.mp3`} controls />
                 </Card.Body>
                 <Card.Footer>
                     {this.props.genres.map((_, id) => (
-                        <a key={id} href={`genres/${_}`}>{ _}</a>
+                        <p key={ id}>{_}</p>
                         ))}
                 </Card.Footer>
             </Card>
