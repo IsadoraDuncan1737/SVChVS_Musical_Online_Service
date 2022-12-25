@@ -9,6 +9,8 @@ import { AlbumsPageWrapper } from './components/pages/AlbumsPageWrapper';
 import { TracksPageWrapper } from './components/pages/TracksPageWrapper';
 
 import './stylesheets/custom.css'
+import { AddPage } from './components/pages/AddPage';
+import { HomePage } from './components/pages/HomePage';
 
 export default class App extends Component {
     static displayName = App.name;
@@ -28,12 +30,14 @@ export default class App extends Component {
             <Layout>
                 <Router>
                     <Routes>
+                        <Route path='/' element={<HomePage />} />
                         <Route path='/Tracks' element={<TracksPage tracks={this.state.currentTracks} trackTitle=""/>} />
                         <Route path='/Tracks/:title' element={<TracksPageWrapper />} />
                         <Route path='/Performers' element={<PerformersPage performers={this.state.currentPerformers} performerName="" />} />
                         <Route path='/Performers/:name' element={<PerformersPageWrapper />} />
                         <Route path='/Albums' element={<AlbumsPage albums={this.state.currentAlbums} albumTitle="" />} />
                         <Route path='/Albums/:title' element={<AlbumsPageWrapper />} />
+                        <Route path='/Add' element={<AddPage />} />
                     </Routes>
                 </Router>
             </Layout>
