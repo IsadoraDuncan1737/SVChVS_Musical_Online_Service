@@ -21,16 +21,6 @@ namespace MusicalOnlineService.Services
             return _context.Tracks.Where(_ => _.Genres == genres).ToList();
         }
 
-        public List<Track> GetTracksByReleaseDate(DateTime releaseDate)
-        {
-            return _context.Tracks.Where(_ => _.ReleaseDate == releaseDate).ToList();
-        }
-
-        public List<Track> GetTracksByPlaysNumber(int playsNumber)
-        {
-            return _context.Tracks.Where(_ => _.PlaysNumber == playsNumber).ToList();
-        }
-
         public List<Track> GetTracksByPerformerID(string id)
         {
             return _context.Tracks.Where(_ => _.PerformerId == id).ToList();

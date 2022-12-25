@@ -21,16 +21,6 @@ namespace MusicalOnlineService.Services
             return _context.Performers.Where(_ => _.Genres == genres).ToList();
         }
 
-        public List<Performer> GetPerformersByCareerStartDate(DateTime careerStartDate)
-        {
-            return _context.Performers.Where(_ => _.CareerStartDate == careerStartDate).ToList();
-        }
-
-        public List<Performer> GetPerformersByCareerEndDate(DateTime careerEndDate)
-        {
-            return _context.Performers.Where(_ => _.CareerEndDate == careerEndDate).ToList();
-        }
-
         public Performer GetPerformerByAlbumID(string id)
         {
             Album album = _context.Albums.FirstOrDefault(_ => _.Id == id);

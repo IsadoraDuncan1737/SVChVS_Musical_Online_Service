@@ -74,50 +74,6 @@ namespace MusicalOnlineService.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/get-performers-by-career-start-date")]
-        [ProducesResponseType(typeof(Performer), StatusCodes.Status200OK)]
-        public IActionResult GetPerformersByCareerStartDate(DateTime careerStartDate)
-        {
-            try
-            {
-                var entities = _service.GetPerformersByCareerStartDate(careerStartDate);
-
-                if (entities is null)
-                {
-                    return NotFound();
-                }
-
-                return Ok(entities);
-            }
-            catch (Exception e)
-            {
-                return StatusCode(500, $"{e.Message}");
-            }
-        }
-
-        [HttpGet]
-        [Route("[controller]/get-performers-by-career-end-date")]
-        [ProducesResponseType(typeof(Performer), StatusCodes.Status200OK)]
-        public IActionResult GetPerformersByCareerEndDate(DateTime careerEndDate)
-        {
-            try
-            {
-                var entities = _service.GetPerformersByCareerEndDate(careerEndDate);
-
-                if (entities is null)
-                {
-                    return NotFound();
-                }
-
-                return Ok(entities);
-            }
-            catch (Exception e)
-            {
-                return StatusCode(500, $"{e.Message}");
-            }
-        }
-
-        [HttpGet]
         [Route("[controller]/get-performer-by-name")]
         [ProducesResponseType(typeof(Performer), StatusCodes.Status200OK)]
         public IActionResult GetPerformerByName(string name)

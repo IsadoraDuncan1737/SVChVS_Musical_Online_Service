@@ -74,50 +74,6 @@ namespace MusicalOnlineService.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/get-tracks-by-release-date")]
-        [ProducesResponseType(typeof(Track), StatusCodes.Status200OK)]
-        public IActionResult GetTracksByReleaseDate(DateTime releaseDate)
-        {
-            try
-            {
-                var entities = _service.GetTracksByReleaseDate(releaseDate);
-
-                if (entities is null)
-                {
-                    return NotFound();
-                }
-
-                return Ok(entities);
-            }
-            catch (Exception e)
-            {
-                return StatusCode(500, $"{e.Message}");
-            }
-        }
-
-        [HttpGet]
-        [Route("[controller]/get-tracks-by-plays-number")]
-        [ProducesResponseType(typeof(Track), StatusCodes.Status200OK)]
-        public IActionResult GetTracksByPlaysNumber(int playsNumber)
-        {
-            try
-            {
-                var entities = _service.GetTracksByPlaysNumber(playsNumber);
-
-                if (entities is null)
-                {
-                    return NotFound();
-                }
-
-                return Ok(entities);
-            }
-            catch (Exception e)
-            {
-                return StatusCode(500, $"{e.Message}");
-            }
-        }
-
-        [HttpGet]
         [Route("[controller]/get-track-by-title")]
         [ProducesResponseType(typeof(Track), StatusCodes.Status200OK)]
         public IActionResult GetTrackByTitle(string title)
