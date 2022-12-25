@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { PerformerCard } from '../misc/PerformerCard';
+import { PerformerCard } from '../cards/PerformerCard';
 
 import '../../stylesheets/section.css'
 
@@ -14,6 +14,10 @@ export class PerformersSection extends Component {
 
     render() {
         return (
+            <>
+                        <Row>
+                <h3>Исполнители</h3>
+                </Row>
             <Row>
                 {this.props.performers.map((_, id) => (
                     <Col key={id}>
@@ -21,6 +25,7 @@ export class PerformersSection extends Component {
                         </Col>
                     ))}
                 </Row>
+                </>
         );
     }
 }

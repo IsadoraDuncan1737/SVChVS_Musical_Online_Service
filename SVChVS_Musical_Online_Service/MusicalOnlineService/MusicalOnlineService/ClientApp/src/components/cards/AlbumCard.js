@@ -9,7 +9,7 @@ export class AlbumCard extends Component {
 
         this.state = {
             genres: "",
-            tracks: "",
+            tracks: [],
         }
 
         this.splitGenres = this.splitGenres.bind(this);
@@ -22,7 +22,7 @@ export class AlbumCard extends Component {
     }
 
     render() {
-        let loadedTracks = this.state.tracks.length === 0 ? false : true;
+        let loadedTracks = this.state.tracks === [] ? false : true;
         let splittedGenres = this.state.genres === "" ? false : true;
 
         let contents = loadedTracks && splittedGenres

@@ -42,7 +42,7 @@ export class PerformersTable extends Component {
     }
 
     async getPerformerByAlbumID() {
-        const response = await fetch(`album/get-performer-by-album-id?id=${this.props.albumID}`);
+        const response = await fetch(`performer/get-performer-by-album-id?id=${this.props.albumID}`);
 
         const data = await response.json();
 

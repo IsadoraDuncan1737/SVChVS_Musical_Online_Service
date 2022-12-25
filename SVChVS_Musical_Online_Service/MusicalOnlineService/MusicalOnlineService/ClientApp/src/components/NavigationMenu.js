@@ -10,8 +10,8 @@ export class NavigationMenu extends Component {
 
     render() {
         return (
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Navbar.Brand href="/">Музыкальный Онлайн Сервис</Navbar.Brand>
+            <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Navbar.Brand href="/">Музыкальный Сервис</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav>

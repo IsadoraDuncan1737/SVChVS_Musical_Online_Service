@@ -21,7 +21,7 @@ export class AlbumsTableView extends Component {
                 </thead>
                 <tbody>
                     {this.props.albums.map((_, id) => (
-                        <tr key="id" onClick={() => { this.props.handleChoose(_) }}>
+                        <tr key={ id} onClick={() => { this.props.handleChoose(_) }}>
                             <td>{id + 1}</td>
                             <td>{_.title}</td>
                             <td>{_.performerName}</td>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import {TrackCard} from '../misc/TrackCard';
+import { TrackCard } from '../cards/TrackCard';
 
 import '../../stylesheets/section.css'
 
@@ -14,6 +14,10 @@ export class TracksSection extends Component {
 
     render() {
         return (
+            <>
+                        <Row>
+                <h3>Треки</h3>
+                </Row>
             <Row>
                 {this.props.tracks.map((_, id) => (
                     <Col key={id}>
@@ -21,6 +25,7 @@ export class TracksSection extends Component {
                         </Col>
                     ))}
                 </Row>
+                </>
         );
     }
 }

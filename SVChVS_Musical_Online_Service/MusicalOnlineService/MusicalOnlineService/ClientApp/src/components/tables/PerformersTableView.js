@@ -20,7 +20,7 @@ export class PerformersTableView extends Component {
                 </thead>
                 <tbody>
                     {this.props.performers.map((_, id) => (
-                        <tr key="id" onClick={() => { this.props.handleChoose(_) }}>
+                        <tr key={ id} onClick={() => { this.props.handleChoose(_) }}>
                             <td>{id + 1}</td>
                             <td>{_.name}</td>
                             <td>{_.genres}</td>
