@@ -54,6 +54,10 @@ namespace MusicalOnlineService.Models
                     .IsRequired()
                     .HasMaxLength(200);
 
+                entity.Property(e => e.PerformerName)
+                    .IsRequired()
+                    .HasMaxLength(200);
+
                 entity.Property(e => e.ReleaseDate).HasColumnType("date");
 
                 entity.HasOne(d => d.Performer)
@@ -107,7 +111,15 @@ namespace MusicalOnlineService.Models
                     .HasMaxLength(200)
                     .HasColumnName("PerformerID");
 
+                entity.Property(e => e.AlbumTitle)
+                    .HasMaxLength(200)
+                    .HasColumnName("AlbumTitle");
+
                 entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(200);
+
+                entity.Property(e => e.PerformerName)
                     .IsRequired()
                     .HasMaxLength(200);
 

@@ -14,6 +14,8 @@ namespace MusicalOnlineService.Models
         public string Genres { get; set; }
         public DateTime ReleaseDate { get; set; }
         public int PlaysNumber { get; set; }
+        public string PerformerName { get; set; }
+        public string AlbumTitle { get; set; }
 
         public virtual Album Album { get; set; }
         public virtual Performer Performer { get; set; }
