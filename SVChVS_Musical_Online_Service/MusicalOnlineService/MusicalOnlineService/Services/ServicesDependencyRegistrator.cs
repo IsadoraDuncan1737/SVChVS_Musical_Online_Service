@@ -11,6 +11,8 @@ namespace MusicalOnlineService.Services
             serviceCollection.AddScoped<IPerformerService, PerformerService>();
             serviceCollection.AddScoped<ITrackService, TrackService>();
             serviceCollection.AddScoped<IAlbumService, AlbumService>();
+            serviceCollection.AddScoped<IAudioService, AudioService>();
+            serviceCollection.AddScoped<IPhotoService, PhotoService>();
         }
     }
 }
