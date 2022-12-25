@@ -46,7 +46,7 @@ export class TrackCard extends Component {
 
     splitGenres() {
         let splitGenres = this.props.track.genres.split(", ");
-        console.log(splitGenres);
+
         this.setState({ genres: splitGenres})
     }
 
