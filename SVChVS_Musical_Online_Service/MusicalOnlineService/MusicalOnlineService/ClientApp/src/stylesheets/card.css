@@ -6,6 +6,13 @@
 .card-body {
     padding-left: 0;
     padding-right: 0;
+    display: grid;
+    justify-content: center;
+    margin: 0;
+}
+
+.col {
+    margin: 0;
 }
 
 .card {
@@ -16,14 +23,17 @@
 .card-footer {
     display:flex;
     justify-content: center;
+    border-top-color: white;
 }
 
 .card-header {
     display: flex;
     justify-content: center;
+    border-bottom-color: white;
 }
 
 .card-title {
+    color: white;
     display: flex;
     justify-content: center;
 }
@@ -31,15 +41,26 @@
 .card-subtitle {
     display: flex;
     justify-content: center;
+    margin-bottom: 15px;
 }
 
-a:hover{
-    color:blue;
+a:hover {
+    color: #cccccc;
 }
 
 a{
-    color: black;
+    color: white;
     text-decoration: none;
     margin-left: 5px;
     margin-right: 5px;
+}
+
+p{
+    padding-right: 5px;
+    padding-left:5px;
+    margin-bottom:0;
+}
+
+.react-audio-player {
+    height: 40px;
 }
