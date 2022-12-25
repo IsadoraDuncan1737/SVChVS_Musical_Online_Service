@@ -15,9 +15,9 @@ export class AlbumCardView extends Component {
     render() {
         return (
             <Card bg="dark" text="white">
-                <Card.Img src={`/Performers/${this.props.performerName}/${this.props.album.title}/${this.props.album.title}.jpg`} />
+                <Card.Img src={`/Performers/${this.props.album.performerName}/${this.props.album.title}/${this.props.album.title}.jpg`} />
                 <Card.Header as="h3">
-                    <a className="performer-name" href={`/Performers/${this.props.performerName}`}>{this.props.performerName}</a>
+                    <a className="performer-name" href={`/Performers/${this.props.album.performerName}`}>{this.props.album.performerName}</a>
                 </Card.Header>
                 <Card.Body>
                     <Card.Title>

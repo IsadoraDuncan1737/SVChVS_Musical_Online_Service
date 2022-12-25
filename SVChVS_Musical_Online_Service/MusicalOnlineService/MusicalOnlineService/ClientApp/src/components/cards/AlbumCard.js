@@ -10,30 +10,25 @@ export class AlbumCard extends Component {
         this.state = {
             genres: "",
             tracks: "",
-            performerName: "",
         }
 
         this.splitGenres = this.splitGenres.bind(this);
-        this.getPerformerName = this.getPerformerName.bind(this);
         this.getTracks = this.getTracks.bind(this);
     }
 
     componentDidMount() {
         this.splitGenres();
         this.getTracks();
-        this.getPerformerName();
     }
 
     render() {
-        let loadedPerformer = this.state.performerName === "" ? false : true;
         let loadedTracks = this.state.tracks.length === 0 ? false : true;
         let splittedGenres = this.state.genres === "" ? false : true;
 
-        let contents = loadedPerformer && loadedTracks && splittedGenres
+        let contents = loadedTracks && splittedGenres
             ? <AlbumCardView
                 album={this.props.album}
                 genres={this.state.genres}
-                performerName={this.state.performerName}
                 tracks={this.state.tracks}
             />
             : <div />
@@ -48,14 +43,6 @@ export class AlbumCard extends Component {
         let splitGenres = this.props.album.genres.split(", ");
 
         this.setState({ genres: splitGenres})
-    }
-
-    async getPerformerName() {
-        const response = await fetch(`performer/get?id=${this.props.album.performerId}`);
-
-        const data = await response.json();
-
-        this.setState({ performerName: data.name});
     }
 
     async getTracks() {
