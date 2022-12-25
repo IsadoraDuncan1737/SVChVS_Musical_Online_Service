@@ -16,6 +16,23 @@ namespace MusicalOnlineService.Services
             this._context = context;
         }
 
+        public List<Performer> GetPerformersRange(int range)
+        {
+            var resultList = new List<Performer>();
+
+            if (range > _context.Performers.Count())
+            {
+                range = _context.Performers.Count();
+            }
+
+            for (int i = 0; i < range; i++)
+            {
+                resultList.Add(_context.Performers.ToList().ElementAt(i));
+            }
+
+            return resultList;
+        }
+
         public List<Performer> GetPerformersByGenres(string genres)
         {
             return _context.Performers.Where(_ => _.Genres == genres).ToList();
@@ -23,16 +40,14 @@ namespace MusicalOnlineService.Services
 
         public Performer GetPerformerByAlbumID(string id)
         {
-            Album album = _context.Albums.FirstOrDefault(_ => _.Id == id);
-
-            return _context.Performers.FirstOrDefault(_ => _.Id == album.PerformerId);
+            return _context.Performers.FirstOrDefault(_ => _.Albums.FirstOrDefault(_=> _.Id == id) != default(Album));
         }
 
         public Performer GetPerformerByTrackID(string id)
         {
             Track track = _context.Tracks.FirstOrDefault(_ => _.Id == id);
 
-            return _context.Performers.FirstOrDefault(_ => _.Id == track.PerformerId);
+            return _context.Performers.FirstOrDefault(_ => _.Id == track.Id);
         }
 
         public Performer GetPerformerByName(string name)
@@ -52,11 +67,16 @@ namespace MusicalOnlineService.Services
 
         public Performer Create(Performer entity)
         {
-            entity.Id = Guid.NewGuid().ToString();
-            var resultEntity = _context.Add(entity).Entity;
-            _context.SaveChanges();
+            if (_context.Performers.FirstOrDefault(_ => _.Name == entity.Name) == default(Performer))
+            {
+                entity.Id = Guid.NewGuid().ToString();
+                var resultEntity = _context.Add(entity).Entity;
+                _context.SaveChanges();
 
-            return resultEntity;
+                return resultEntity;
+            }
+
+            return default(Performer);
         }
 
         public Performer Update(Performer entity)

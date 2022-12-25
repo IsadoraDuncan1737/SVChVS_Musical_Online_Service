@@ -16,6 +16,23 @@ namespace MusicalOnlineService.Services
             this._context = context;
         }
 
+        public List<Album> GetAlbumsRange(int range)
+        {
+            var resultList = new List<Album>();
+
+            if (range > _context.Albums.Count())
+            {
+                range = _context.Albums.Count();
+            }
+
+            for (int i = 0; i< range; i++)
+            {
+                resultList.Add(_context.Albums.ToList().ElementAt(i));
+            }
+
+            return resultList;
+        }
+
         public List<Album> GetAlbumsByGenres(string genres)
         {
             return _context.Albums.Where(_ => _.Genres == genres).ToList();
@@ -50,11 +67,16 @@ namespace MusicalOnlineService.Services
 
         public Album Create(Album entity)
         {
-            entity.Id = Guid.NewGuid().ToString();
-            var resultEntity = _context.Add(entity).Entity;
-            _context.SaveChanges();
+            if (_context.Albums.FirstOrDefault(_ => _.Title == entity.Title) == default(Album))
+            {
+                entity.Id = Guid.NewGuid().ToString();
+                var resultEntity = _context.Add(entity).Entity;
+                _context.SaveChanges();
 
-            return resultEntity;
+                return resultEntity;
+            }
+
+            return default(Album);
         }
 
         public Album Update(Album entity)

@@ -16,6 +16,23 @@ namespace MusicalOnlineService.Services
             this._context = context;
         }
 
+        public List<Track> GetTracksRange(int range)
+        {
+            var resultList = new List<Track>();
+
+            if (range > _context.Tracks.Count())
+            {
+                range = _context.Tracks.Count();
+            }
+
+            for (int i = 0; i < range; i++)
+            {
+                resultList.Add(_context.Tracks.ToList().ElementAt(i));
+            }
+
+            return resultList;
+        }
+
         public List<Track> GetTracksByGenres(string genres)
         {
             return _context.Tracks.Where(_ => _.Genres == genres).ToList();
@@ -48,11 +65,16 @@ namespace MusicalOnlineService.Services
 
         public Track Create(Track entity)
         {
-            entity.Id = Guid.NewGuid().ToString();
-            var resultEntity = _context.Add(entity).Entity;
-            _context.SaveChanges();
+            if (_context.Tracks.FirstOrDefault(_ => _.Title == entity.Title) == default(Track))
+            {
+                entity.Id = Guid.NewGuid().ToString();
+                var resultEntity = _context.Add(entity).Entity;
+                _context.SaveChanges();
 
-            return resultEntity;
+                return resultEntity;
+            }
+
+            return default(Track);
         }
 
         public Track Update(Track entity)

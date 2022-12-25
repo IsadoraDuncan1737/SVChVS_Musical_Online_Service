@@ -18,6 +18,23 @@ namespace MusicalOnlineService.Controllers
         }
 
         [HttpGet]
+        [Route("[controller]/get-performers-range")]
+        [ProducesResponseType(typeof(Performer), StatusCodes.Status200OK)]
+        public IActionResult GetPerformersRange(int range)
+        {
+            try
+            {
+                var entities = _service.GetPerformersRange(range);
+
+                return Ok(entities);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, $"{e.Message}");
+            }
+        }
+
+        [HttpGet]
         [Route("[controller]/get-all")]
         [ProducesResponseType(typeof(Performer), StatusCodes.Status200OK)]
         public IActionResult GetAll()
@@ -153,7 +170,7 @@ namespace MusicalOnlineService.Controllers
 
                 var result = _service.Create(entity);
 
-                return Ok(entity);
+                return Ok(result);
             }
             catch (Exception e)
             {
