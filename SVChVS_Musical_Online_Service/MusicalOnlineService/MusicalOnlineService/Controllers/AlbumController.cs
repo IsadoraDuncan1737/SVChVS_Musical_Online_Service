@@ -96,7 +96,7 @@ namespace MusicalOnlineService.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/get-alubms-by-plays-number")]
+        [Route("[controller]/get-albums-by-plays-number")]
         [ProducesResponseType(typeof(Album), StatusCodes.Status200OK)]
         public IActionResult GetAlbumsByPlaysNumber(int playsNumber)
         {
@@ -118,7 +118,7 @@ namespace MusicalOnlineService.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/get-albums-by-title")]
+        [Route("[controller]/get-album-by-title")]
         [ProducesResponseType(typeof(Album), StatusCodes.Status200OK)]
         public IActionResult GetAlbumByTitle(string title)
         {
@@ -162,13 +162,13 @@ namespace MusicalOnlineService.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/get-album-by-performer-id")]
+        [Route("[controller]/get-albums-by-performer-id")]
         [ProducesResponseType(typeof(Album), StatusCodes.Status200OK)]
-        public IActionResult GetAlbumByPerformerID(string id)
+        public IActionResult GetAlbumsByPerformerID(string id)
         {
             try
             {
-                var entities = _service.GetAlbumByPerformerID(id);
+                var entities = _service.GetAlbumsByPerformerID(id);
 
                 if (entities is null)
                 {

@@ -9,8 +9,8 @@ namespace MusicalOnlineService.Services.Interfaces
         List<Track> GetTracksByGenres(string genres);
         List<Track> GetTracksByReleaseDate(DateTime releaseDate);
         List<Track> GetTracksByPlaysNumber(int playsNumber);
-        Track GetTrackByAlbumID(string id);
-        Track GetTrackByPerformerID(string id);
+        List<Track> GetTracksByAlbumID(string id);
+        List<Track> GetTracksByPerformerID(string id);
         Track GetTrackByTitle(string name);
     }
 }

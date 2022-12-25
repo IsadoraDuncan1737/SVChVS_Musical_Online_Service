@@ -10,7 +10,7 @@ namespace MusicalOnlineService.Services.Interfaces
         List<Album> GetAlbumsByReleaseDate(DateTime releaseDate);
         List<Album> GetAlbumsByPlaysNumber(int playsNumber);
         Album GetAlbumByTrackID(string id);
-        Album GetAlbumByPerformerID(string id);
+        List<Album> GetAlbumsByPerformerID(string id);
         Album GetAlbumByTitle(string name);
     }
 }

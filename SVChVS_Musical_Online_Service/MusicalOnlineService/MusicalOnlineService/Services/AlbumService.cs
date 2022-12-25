@@ -31,9 +31,9 @@ namespace MusicalOnlineService.Services
             return _context.Albums.Where(_ => _.PlaysNumber == playsNumber).ToList();
         }
 
-        public Album GetAlbumByPerformerID(string id)
+        public List<Album> GetAlbumsByPerformerID(string id)
         {
-            return _context.Albums.FirstOrDefault(_ => _.PerformerId == id);
+            return _context.Albums.Where(_ => _.PerformerId == id).ToList();
         }
 
         public Album GetAlbumByTrackID(string id)

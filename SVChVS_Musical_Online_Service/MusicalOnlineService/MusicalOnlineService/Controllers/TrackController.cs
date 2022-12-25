@@ -140,13 +140,13 @@ namespace MusicalOnlineService.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/get-track-by-album-id")]
+        [Route("[controller]/get-tracks-by-album-id")]
         [ProducesResponseType(typeof(Track), StatusCodes.Status200OK)]
         public IActionResult GetTrackByAlbumID(string id)
         {
             try
             {
-                var entities = _service.GetTrackByAlbumID(id);
+                var entities = _service.GetTracksByAlbumID(id);
 
                 if (entities is null)
                 {
@@ -162,13 +162,13 @@ namespace MusicalOnlineService.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/get-track-by-performer-id")]
+        [Route("[controller]/get-tracks-by-performer-id")]
         [ProducesResponseType(typeof(Track), StatusCodes.Status200OK)]
         public IActionResult GetTrackByPerformerID(string id)
         {
             try
             {
-                var entities = _service.GetTrackByPerformerID(id);
+                var entities = _service.GetTracksByPerformerID(id);
 
                 if (entities is null)
                 {

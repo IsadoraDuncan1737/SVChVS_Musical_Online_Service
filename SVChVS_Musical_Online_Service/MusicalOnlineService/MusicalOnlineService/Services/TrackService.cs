@@ -31,14 +31,14 @@ namespace MusicalOnlineService.Services
             return _context.Tracks.Where(_ => _.PlaysNumber == playsNumber).ToList();
         }
 
-        public Track GetTrackByPerformerID(string id)
+        public List<Track> GetTracksByPerformerID(string id)
         {
-            return _context.Tracks.FirstOrDefault(_ => _.PerformerId == id);
+            return _context.Tracks.Where(_ => _.PerformerId == id).ToList();
         }
 
-        public Track GetTrackByAlbumID(string id)
+        public List<Track> GetTracksByAlbumID(string id)
         { 
-            return _context.Tracks.FirstOrDefault(_ => _.AlbumId == id);
+            return _context.Tracks.Where(_ => _.AlbumId == id).ToList();
         }
 
         public Track GetTrackByTitle(string title)
