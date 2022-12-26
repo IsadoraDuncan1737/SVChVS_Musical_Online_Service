@@ -15,17 +15,17 @@ export class AlbumsSection extends Component {
     render() {
         return (
             <>
-            <Row>
-                <h3>Альбомы</h3>
+                <Row>
+                    <h3>Альбомы</h3>
                 </Row>
-            <Row>
-                {this.props.albums.map((_, id) => (
-                    <Col key={id}>
-                        <AlbumCard album={_} />
+                <Row>
+                    {this.props.albums.map((_, id) => (
+                        <Col key={id}>
+                            <AlbumCard album={_} />
                         </Col>
                     ))}
                 </Row>
-                </>
+            </>
         );
     }
 }

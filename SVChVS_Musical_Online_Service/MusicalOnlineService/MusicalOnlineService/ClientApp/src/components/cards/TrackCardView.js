@@ -15,7 +15,7 @@ export class TrackCardView extends Component {
         return (
             <Card bg="dark" text="white">
                 <Card.Img src={`/Performers/${this.props.track.performerName}/${this.props.track.albumTitle}/${this.props.track.albumTitle}.jpg`} />
-                <Card.Header as = "h3">
+                <Card.Header as="h3">
                     <a className="performer-name" href={`/Performers/${this.props.track.performerName}`}>{this.props.track.performerName}</a>
                 </Card.Header>
                 <Card.Body>
@@ -29,8 +29,8 @@ export class TrackCardView extends Component {
                 </Card.Body>
                 <Card.Footer>
                     {this.props.genres.map((_, id) => (
-                        <p key={ id}>{_}</p>
-                        ))}
+                        <p key={id}>{_}</p>
+                    ))}
                 </Card.Footer>
             </Card>
         );

@@ -29,7 +29,7 @@ export class PerformerCard extends Component {
             ? <PerformerCardView
                 performer={this.props.performer}
                 genres={this.state.genres}
-                albums={ this.state.albums}
+                albums={this.state.albums}
             />
             : <div />
         return (
@@ -42,7 +42,7 @@ export class PerformerCard extends Component {
     splitGenres() {
         let splitGenres = this.props.performer.genres.split(", ");
 
-        this.setState({ genres: splitGenres})
+        this.setState({ genres: splitGenres })
     }
 
     async getAlbums() {

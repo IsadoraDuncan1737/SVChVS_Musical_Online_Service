@@ -3,7 +3,6 @@ using MusicalOnlineService.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MusicalOnlineService.Services
 {
@@ -13,7 +12,7 @@ namespace MusicalOnlineService.Services
 
         public AlbumService(MusicalOnlineServiceContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
         public List<Album> GetAlbumsRange(int range)
@@ -25,7 +24,7 @@ namespace MusicalOnlineService.Services
                 range = _context.Albums.Count();
             }
 
-            for (int i = 0; i< range; i++)
+            for (int i = 0; i < range; i++)
             {
                 resultList.Add(_context.Albums.ToList().ElementAt(i));
             }

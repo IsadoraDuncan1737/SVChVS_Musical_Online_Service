@@ -30,7 +30,7 @@ export class AddFileComponent extends Component {
     render() {
         return (
             <Form.Group className="mb-3">
-                <Form.Control ref={ this.props.inputRef} type="file" onChange={(e) => this.handleFileChange(e)} required/>
+                <Form.Control ref={this.props.inputRef} type="file" onChange={(e) => this.handleFileChange(e)} required />
                 <Form.Control.Feedback type="invalid">
                     Пожалуйста, загрузите файл
                 </Form.Control.Feedback>

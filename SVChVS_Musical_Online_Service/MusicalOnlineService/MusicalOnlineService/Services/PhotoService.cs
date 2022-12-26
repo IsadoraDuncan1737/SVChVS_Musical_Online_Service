@@ -1,12 +1,6 @@
 ﻿using MusicalOnlineService.Services.Interfaces;
 using MusicalOnlineService.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Reflection;
 using System.IO;
 
 namespace MusicalOnlineService.Services

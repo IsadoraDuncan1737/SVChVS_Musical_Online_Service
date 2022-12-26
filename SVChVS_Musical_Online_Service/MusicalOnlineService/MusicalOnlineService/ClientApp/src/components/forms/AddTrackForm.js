@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Input } from 'reactstrap';
 import { AddTrackFormView } from './AddTrackFormView';
 
 export class AddTrackForm extends Component {

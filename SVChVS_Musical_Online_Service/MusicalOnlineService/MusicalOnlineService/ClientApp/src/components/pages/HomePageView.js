@@ -16,13 +16,13 @@ export class HomePageView extends Component {
         return (
             <Row>
                 <Col>
-                    <AlbumsSection albums={ this.props.albums}/>
+                    <AlbumsSection albums={this.props.albums} />
                 </Col>
                 <Col>
-                    <TracksSection tracks={ this.props.tracks}/>
+                    <TracksSection tracks={this.props.tracks} />
                 </Col>
                 <Col>
-                    <PerformersSection performers={ this.props.performers}/>
+                    <PerformersSection performers={this.props.performers} />
                 </Col>
             </Row>
         );

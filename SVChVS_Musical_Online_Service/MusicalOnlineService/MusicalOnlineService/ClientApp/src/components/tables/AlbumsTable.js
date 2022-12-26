@@ -24,12 +24,12 @@ export class AlbumsTable extends Component {
 
     render() {
         let contents = this.state.loaded === true
-            ? <AlbumsTableView albums={this.state.albums} handleChoose={ this.props.handleChoose}/>
+            ? <AlbumsTableView albums={this.state.albums} handleChoose={this.props.handleChoose} />
             : <p>Loading...</p>
         return (
             <>
-                { contents}
-                </>
+                {contents}
+            </>
         );
     }
 
@@ -46,6 +46,6 @@ export class AlbumsTable extends Component {
 
         const data = await response.json();
 
-        this.setState({ albums: data, loaded: true  });
+        this.setState({ albums: data, loaded: true });
     }
 }

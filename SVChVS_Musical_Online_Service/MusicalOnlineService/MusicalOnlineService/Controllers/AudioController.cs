@@ -3,10 +3,6 @@ using MusicalOnlineService.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Linq;
-using System.IO;
 
 namespace MusicalOnlineService.Controllers
 {

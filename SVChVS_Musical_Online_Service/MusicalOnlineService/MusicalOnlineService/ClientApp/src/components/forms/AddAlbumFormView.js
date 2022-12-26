@@ -7,7 +7,6 @@ import Popover from 'react-bootstrap/Popover';
 import { PerformersTable } from '../tables/PerformersTable';
 import Modal from 'react-bootstrap/Modal';
 
-import '../../stylesheets/popover.css';
 import { AddFileComponent } from '../misc/AddFileComponent';
 
 export class AddAlbumFormView extends Component {

@@ -31,7 +31,7 @@ export default class App extends Component {
                 <Router>
                     <Routes>
                         <Route path='/' element={<HomePage />} />
-                        <Route path='/Tracks' element={<TracksPage tracks={this.state.currentTracks} trackTitle=""/>} />
+                        <Route path='/Tracks' element={<TracksPage tracks={this.state.currentTracks} trackTitle="" />} />
                         <Route path='/Tracks/:title' element={<TracksPageWrapper />} />
                         <Route path='/Performers' element={<PerformersPage performers={this.state.currentPerformers} performerName="" />} />
                         <Route path='/Performers/:name' element={<PerformersPageWrapper />} />

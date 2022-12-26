@@ -21,15 +21,15 @@ export class AlbumCardView extends Component {
                 </Card.Header>
                 <Card.Body>
                     <Card.Title>
-                        <p>{ this.props.album.title}</p>
+                        <p>{this.props.album.title}</p>
                     </Card.Title>
-                        <Row>
-                            {this.props.tracks.map((_, id) => (
-                                <Col key={ id}>
-                                    <a href={ `/Tracks/${_.title}`}>{_.title}</a>
-                                    </Col>
+                    <Row>
+                        {this.props.tracks.map((_, id) => (
+                            <Col key={id}>
+                                <a href={`/Tracks/${_.title}`}>{_.title}</a>
+                            </Col>
                         ))}
-                            </Row>
+                    </Row>
                 </Card.Body>
                 <Card.Footer>
                     {this.props.genres.map((_, id) => (

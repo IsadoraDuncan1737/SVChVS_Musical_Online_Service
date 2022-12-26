@@ -28,8 +28,8 @@ export class PerformersTable extends Component {
             : <p>Loading...</p>
         return (
             <>
-                { contents}
-                </>
+                {contents}
+            </>
         );
     }
 
@@ -38,7 +38,7 @@ export class PerformersTable extends Component {
 
         const data = await response.json();
 
-        this.setState({ performers: data, loaded: true  });
+        this.setState({ performers: data, loaded: true });
     }
 
     async getPerformerByAlbumID() {
@@ -48,6 +48,6 @@ export class PerformersTable extends Component {
 
         const arrayData = [data];
 
-        this.setState({ performers: arrayData, loaded: true  });
+        this.setState({ performers: arrayData, loaded: true });
     }
 }

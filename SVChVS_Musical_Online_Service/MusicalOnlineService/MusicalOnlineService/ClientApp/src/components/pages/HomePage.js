@@ -30,7 +30,7 @@ export class HomePage extends Component {
             : <HomePageView
                 albums={this.state.albums}
                 performers={this.state.performers}
-                tracks={ this.state.tracks}
+                tracks={this.state.tracks}
             />
         return (
             <>
@@ -44,7 +44,7 @@ export class HomePage extends Component {
 
         const data = await response.json();
 
-        this.setState({ albums: data});
+        this.setState({ albums: data });
     }
 
     async getPerformers() {
@@ -52,7 +52,7 @@ export class HomePage extends Component {
 
         const data = await response.json();
 
-        this.setState({ performers: data});
+        this.setState({ performers: data });
     }
 
     async getTracks() {
@@ -60,6 +60,6 @@ export class HomePage extends Component {
 
         const data = await response.json();
 
-        this.setState({ tracks: data});
+        this.setState({ tracks: data });
     }
 }

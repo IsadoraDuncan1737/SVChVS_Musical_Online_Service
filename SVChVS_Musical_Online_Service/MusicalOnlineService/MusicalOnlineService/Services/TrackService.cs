@@ -3,7 +3,6 @@ using MusicalOnlineService.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MusicalOnlineService.Services
 {
@@ -13,7 +12,7 @@ namespace MusicalOnlineService.Services
 
         public TrackService(MusicalOnlineServiceContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
         public List<Track> GetTracksRange(int range)

@@ -42,7 +42,7 @@ export class AlbumCard extends Component {
     splitGenres() {
         let splitGenres = this.props.album.genres.split(", ");
 
-        this.setState({ genres: splitGenres})
+        this.setState({ genres: splitGenres })
     }
 
     async getTracks() {
@@ -50,6 +50,6 @@ export class AlbumCard extends Component {
 
         const data = await response.json();
 
-        this.setState({ tracks: data});
+        this.setState({ tracks: data });
     }
 }
